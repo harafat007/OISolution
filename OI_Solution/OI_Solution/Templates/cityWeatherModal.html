@@ -1,0 +1,11 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Please enter the city for which you want to identify weather conditions</h4>
+</div>
+<div class="modal-body">
+    <input type="text" ng-model="city" placeholder="Enter City" id="idInputCity" />
+    <div>{{cityWeatherResult}} </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-model="userOK" type="button" ng-click="userOK2()">Allow</button>
+    <button class="btn btn-warning" ng-model="dismiss" type="button" ng-click="userCancel2()">Dismiss</button>
+</div>
