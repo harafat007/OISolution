@@ -12,6 +12,7 @@ angular.module('app')
     }
 
     this.populateWeatherInfo = function ($scope, status) {
+        $scope.weatherInfo = '';
         if (status.isGeoOK === false) {
             if (status.isWeatherOK === false)
                 $scope.message = 'Geolocation Detection failed';
@@ -21,8 +22,9 @@ angular.module('app')
             }
         }
         else {
-            if (status.isWeatherOK === false)
+            if (status.isWeatherOK === false) {
                 $scope.message = 'Sorry weather information couldnt be retrieved';
+            }
             else {
                 $scope.message = 'Make you plans based on the weather information. Enjoy your day.';
                 $scope.weatherInfo = status.weatherResult;

@@ -5,6 +5,7 @@ angular.module("app")
     $scope.errorMsg = '';
     $scope.isGeoOK = false;
     var modalInstance2 = null;
+    $scope.weatherFetched = false;
 
     var modalInstance = $uibModal.open({
 
@@ -49,7 +50,7 @@ angular.module("app")
 
                     $timeout(function () {
                         var status = weatherService.getWeatherStatus();
-                        PopulateWeatherInfo(status);                        
+                        PopulateWeatherInfo(status);
                     }, 8000);
 
                 }, function (cancelInfo) {
@@ -72,7 +73,7 @@ angular.module("app")
         $timeout(function () {
             var status = weatherService.getWeatherStatus();
             PopulateWeatherInfo(status);
-        }, 8000);
+        }, 6000);
 
     }, function (cancelInfo) {
         $log.info('modal-component dismissed ');
@@ -85,22 +86,25 @@ angular.module("app")
     }
 
     PopulateWeatherInfo = function (status) {
-        if (status.isGeoOK === false) {
-            if (status.isWeatherOK === false)
-                $scope.message = 'Geolocation Detection failed';
-            else {
-                $scope.message = 'Geolocation Detection failed. Default city was chosen to get weather info';
-                $scope.weatherInfo = status.weatherResult;
-            }
-        }
-        else {
-            if (status.isWeatherOK === false)
-                $scope.message = 'Sorry weather information couldnt be retrieved';
-            else {
-                $scope.message = 'Make you plans based on the weather information. Enjoy your day.';
-                $scope.weatherInfo = status.weatherResult;
-            }
-        }
+        weatherService.populateWeatherInfo($scope, status);
+        $scope.weatherFetched = true;
+        $log.log('weatherFetched=' + $scope.weatherFetched);
+        //if (status.isGeoOK === false) {
+        //    if (status.isWeatherOK === false)
+        //        $scope.message = 'Geolocation Detection failed';
+        //    else {
+        //        $scope.message = 'Geolocation Detection failed. Default city was chosen to get weather info';
+        //        $scope.weatherInfo = status.weatherResult;
+        //    }
+        //}
+        //else {
+        //    if (status.isWeatherOK === false)
+        //        $scope.message = 'Sorry weather information couldnt be retrieved';
+        //    else {
+        //        $scope.message = 'Make you plans based on the weather information. Enjoy your day.';
+        //        $scope.weatherInfo = status.weatherResult;
+        //    }
+        //}
     }
 
 })

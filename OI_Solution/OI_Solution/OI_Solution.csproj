@@ -82,6 +82,8 @@
     <Content Include="Templates\weatherModal.html" />
     <Content Include="Templates\LineChart.html" />
     <Content Include="Templates\Home.html" />
+    <Content Include="UnitTests\ChartControllerSpec.js" />
+    <Content Include="UnitTests\TestConfig.js" />
     <Content Include="UnitTests\WeatherServiceSpec.js" />
     <Content Include="UnitTests\HomeControllerSpec.js" />
     <Content Include="UnitTests\TestCtrlSpec.js" />

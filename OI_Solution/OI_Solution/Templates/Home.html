@@ -1,5 +1,28 @@
-﻿<h1>Your Weather Information</h1> 
+﻿<h1>Your Weather Information</h1>
 
-<h4> {{message}} </h4>
+<h4>{{message}} </h4>
 
-<div id="weather_widget">{{weatherInfo}}</div>
+<div ng-show="weatherFetched===true">
+    <table style="width: 60%">
+        <tr>
+            <td>Temp</td>
+            <td>{{weatherInfo.main.temp}} K</td>
+        </tr>
+        <tr>
+            <td>Clouds</td>
+            <td>{{weatherInfo.clouds.all}}</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{weatherInfo.main.humidity}} %</td>
+        </tr>
+        <tr>
+            <td>Wind</td>
+            <td>{{weatherInfo.wind.speed}} /hr</td>
+        </tr>
+        <tr>
+            <td>Clouds</td>
+            <td>{{weatherInfo.main.pressure}} hpa</td>
+        </tr>
+    </table>
+</div>

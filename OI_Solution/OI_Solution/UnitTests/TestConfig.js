@@ -1,0 +1,4 @@
+﻿weatherServiceResult = { "coord": { "lon": 77.33, "lat": 28.58 }, "weather": [{ "id": 711, "main": "Smoke", "description": "smoke", "icon": "50d" }, { "id": 701, "main": "Mist", "description": "mist", "icon": "50d" }], "base": "stations", "main": { "temp": 290.43, "pressure": 1017, "humidity": 55, "temp_min": 289.15, "temp_max": 292.15 }, "visibility": 1100, "wind": { "speed": 2.1, "deg": 290 }, "clouds": { "all": 0 }, "dt": 1479961800, "sys": { "type": 1, "id": 7809, "message": 0.1613, "country": "IN", "sunrise": 1479950438, "sunset": 1479988446 }, "id": 7279746, "name": "Noida", "cod": 200 }
+defaultCity = 'Noida';
+weatherAPIKey = 'd68a6b0c7bbc05429e681966a175b1aa';
+genericErrorMessage = 'An Error has occurred. Please call helpdesk at 9540077720';
